@@ -30,6 +30,7 @@ import java.util.function.Consumer;
 public class BlockTile extends Asset<TileData> {
     private BufferedImage[] images;
     private boolean autoBlock;
+    private TileType tileType = TileType.SINGLE;
     private List<Consumer<BlockTile>> reloadListeners = Collections.synchronizedList(Lists.newArrayList());
 
     public BlockTile(ResourceUrn urn, AssetType<?, TileData> assetType, TileData data) {
@@ -70,4 +71,7 @@ public class BlockTile extends Asset<TileData> {
         }
     }
 
+    public TileType getTileType() {
+        return tileType;
+    }
 }

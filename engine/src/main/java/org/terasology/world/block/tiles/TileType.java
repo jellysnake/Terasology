@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 MovingBlocks
+ * Copyright 2019 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,28 +15,13 @@
  */
 package org.terasology.world.block.tiles;
 
-import org.terasology.assets.AssetData;
-
-import java.awt.image.BufferedImage;
-
-/**
- */
-public class TileData implements AssetData {
-    private BufferedImage[] images;
-    private boolean autoBlock;
-    private TileType tileType;
-
-    public TileData(BufferedImage[] images, boolean autoBlock, TileType tileType) {
-        this.images = images;
-        this.autoBlock = autoBlock;
-        this.tileType = tileType;
-    }
-
-    public BufferedImage[] getImages() {
-        return images;
-    }
-
-    public boolean isAutoBlock() {
-        return autoBlock;
-    }
+public enum TileType {
+    /**
+     * A single image used for the tile.
+     */
+    SINGLE,
+    /**
+     * A series of images cycled through to animate the tile
+     */
+    ANIMATED
 }

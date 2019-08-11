@@ -52,7 +52,7 @@ public class TileFormat extends AbstractAssetFileFormat<TileData> {
                 frames[i] = new BufferedImage(image.getHeight(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
                 frames[i].createGraphics().drawImage(image, -image.getHeight() * i, 0, null);
             }
-            return new TileData(frames, auto);
+            return new TileData(frames, auto, frames.length > 1 ? TileType.ANIMATED: TileType.SINGLE);
         }
     }
 
